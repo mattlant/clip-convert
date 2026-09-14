@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clipconvert"
+dynamic = ["version"]
+description = "Convert HTML clipboard content to Markdown"
+requires-python = ">=3.12"
+dependencies = [
+    "PySide6>=6.6.0",
+    "markdownify>=0.9.1",
+]
+
+[project.gui-scripts]
+clipconvert = "clipconvert.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "clipconvert.version.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+clipconvert = ["assets/*.ico"]

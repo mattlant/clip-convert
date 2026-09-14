@@ -1,0 +1,4 @@
+# Project dependencies
+setuptools>=68
+PySide6>=6.6.0
+markdownify>=0.9.1
